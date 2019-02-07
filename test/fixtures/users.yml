@@ -4,10 +4,10 @@ one:
   lname: MyString
   fname: MyString
   email: mystring@gmail.com
-  thumbnail: MyString
+  thumbnail: mystring.jpg
 
 two:
-  lname: MyString
-  fname: MyString
-  email: mystring@me.es
-  thumbnail:
+  lname: MyString2
+  fname: MyString2
+  email: mystring2@me.com
+  thumbnail: mystring2.png
