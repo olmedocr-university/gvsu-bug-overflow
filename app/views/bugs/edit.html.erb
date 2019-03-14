@@ -1,6 +1,8 @@
-<h1>Editing Bug</h1>
+<h2>Editing Bug</h2>
 
 <%= render 'form', bug: @bug %>
 
-<%= link_to 'Show', @bug %> |
-<%= link_to 'Back', bugs_path %>
+<div class="btn-group" role="group">
+  <%= link_to 'Show', @bug , :class => "btn btn-outline-primary", :role => "button"%>
+  <%= link_to 'Back', bugs_path, :class => "btn btn-outline-secondary", :role => "button" %>
+</div>

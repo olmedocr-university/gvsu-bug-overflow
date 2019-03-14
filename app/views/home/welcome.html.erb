@@ -1,0 +1,37 @@
+<br>
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to Bug Overflow!</h1>
+  <p class="lead">Keep track of your bugs as our developers do, as simple as that</p>
+  <hr class="my-4">
+  <p>In our company, all of our products keep the same principle, also the tools that we build for ourselves.</p>
+  <h3>"Keep it simple, stupid!"</h3>
+  <br>
+  <p>
+    <a class="btn btn-primary btn-lg" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">See our latest bugs</a>
+  </p>
+
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <div class="container-fluid">
+          <div class="row flex-wrap justify-content-center">
+            <% Bug.all.reverse.take(3).each do |bug| %>
+              <div class="col-auto py-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= bug.title %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <%= (bug.user.try(:fname) || "NA") + " " + (bug.user.try(:lname) || "NA") %>
+                    </h6>
+                    <p class="card-text"><%= bug.description %></p>
+                    <span class="card-link"><%= bug.issue_type %></span>
+                    <span class="card-link"><%= bug.priority %></span>
+                    <span class="card-link"><%= bug.status %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

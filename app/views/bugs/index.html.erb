@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bugs</h1>
+<h2>Bugs</h2>
 
-<table>
-  <thead>
+<table class="table table-striped table-responsive-sm">
+  <thead class="thead-light">
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>User</th>
-      <th>Issue type</th>
-      <th>Priority</th>
-      <th>Status</th>
-      <th colspan="3"></th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">User</th>
+      <th scope="col">Issue type</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Status</th>
+      <th scope="col"></th>
     </tr>
   </thead>
 
@@ -24,9 +24,13 @@
         <td><%= bug.issue_type %></td>
         <td><%= bug.priority %></td>
         <td><%= bug.status %></td>
-        <td><%= link_to 'Show', bug %></td>
-        <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to 'Show', bug, :class => "btn btn-outline-primary", :role => "button" %>
+            <%= link_to 'Edit', edit_bug_path(bug), :class => "btn btn-outline-secondary", :role => "button" %>
+            <%= link_to 'Destroy', bug, :class => "btn btn-outline-danger", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Bug', new_bug_path %>
+<%= link_to 'New Bug', new_bug_path, :class => "btn btn-outline-success", :role => "button"%>

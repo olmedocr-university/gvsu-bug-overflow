@@ -1,34 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @bug.title %>
-</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @bug.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <%= (@bug.user.try(:fname) || "NA") + " " + (@bug.user.try(:lname) || "NA") %>
+    </h6>
+    <p class="card-text"><%= @bug.description %></p>
+    <span class="card-link"><%= @bug.issue_type %></span>
+    <span class="card-link"><%= @bug.priority %></span>
+    <span class="card-link"><%= @bug.status %></span>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @bug.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= (@bug.user.try(:fname) || "NA") + " " + (@bug.user.try(:lname) || "NA") %>
-</p>
-
-<p>
-  <strong>Issue type:</strong>
-  <%= @bug.issue_type %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @bug.priority %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @bug.status %>
-</p>
-
-<%= link_to 'Edit', edit_bug_path(@bug) %> |
-<%= link_to 'Back', bugs_path %>
+<br>
+<br>
+<div class="btn-group" role="group">
+  <%= link_to 'Edit', edit_bug_path(@bug) , :class => "btn btn-outline-primary", :role => "button"%>
+  <%= link_to 'Back', bugs_path, :class => "btn btn-outline-secondary", :role => "button" %>
+</div>
