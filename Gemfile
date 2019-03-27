@@ -6,6 +6,10 @@ ruby '2.6.0'
 gem 'bootstrap'
 # Required by bootstrap
 gem 'jquery-rails'
+# Required by bootstrap to avoid breaking deletion links
+gem 'js-routes'
+# Allow CORS calls without a proxy
+gem 'rack-cors', require: 'rack/cors'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
@@ -40,7 +44,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'js-routes'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3.6'
 end
@@ -66,7 +69,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
-  gem 'js-routes'
   gem 'pg'
   gem 'rails_12factor'
 end
